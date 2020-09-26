@@ -130,7 +130,7 @@ async def ping(ctx):
 
 # Clear
 @bot.command()
-@commands.has_role("Management")
+@commands.has_permissions(manage_messages=True)
 async def clear(ctx, amount=1):
     '''Clears messages in a channel. Only if you can manage messages though'''
     if amount > 5:
