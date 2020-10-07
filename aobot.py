@@ -145,7 +145,7 @@ async def clear(ctx, amount=1):
 
 # Mute
 @bot.command()
-@commands.has_role("Management")
+@commands.has_permissions(manage_roles=True)
 async def mute(ctx, member: discord.Member = None, duration = 1, *, reason=None):
     '''Mutes a user (Assigns @Muted role)'''
     muted = discord.utils.get(ctx.guild.roles, name = 'Muted')
@@ -186,7 +186,7 @@ async def mute(ctx, member: discord.Member = None, duration = 1, *, reason=None)
 
 # Unmute
 @bot.command()
-@commands.has_role("Management")
+@commands.has_permissions(manage_roles=True)
 async def unmute(ctx, member: discord.Member = None, *, reason = None):
     '''Unmutes a user (Removes @Muted role)'''
     muted = discord.utils.get(ctx.guild.roles, name = "Muted")
